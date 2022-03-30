@@ -16,7 +16,7 @@ You can read further about Lens in Veryfi's dedicated page: https://www.veryfi.c
 4. [Get in contact with our team](#contact)
 
 ## Other Lens iOS Examples <a name="examples"></a>
-This is an example of how to use Veryfi Lens Receipts in your app, you can find the developer documentation [here](iOSLensLongReceipts.pdf).
+This is an example of how to use Veryfi Lens Receipts in your app, you can find the developer documentation [here](iOSLensReceipts.pdf).
 You can find five example projects, which are the five versions of Lens that we currently offer:
 - [Lens for Long Receipts](https://github.com/veryfi/veryfi-lens-long-receipts-ios-demo)
 - [Lens for Receipts](https://github.com/veryfi/veryfi-lens-receipts-ios-demo)
