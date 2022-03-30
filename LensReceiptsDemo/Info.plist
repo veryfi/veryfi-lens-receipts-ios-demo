@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+    <key>NSCameraUsageDescription</key>
+    <string>Scan documents</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Access photo gallery for document backups</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Access photo gallery for document uploads</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Access photo gallery for document backups</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Access photo gallery for document uploads</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Quickly add transactions via voice dictation</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Quickly add transactions via voice dictation</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Helps to identify places around you</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Helps to identify places around you</string>
+    <key>NSContactsUsageDescription</key>
+    <string>Add your ___@veryfi.cc assigned email address for reference</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>Enrich your data with business meetings and events from your Calendar</string>
+</dict>
+</plist>
