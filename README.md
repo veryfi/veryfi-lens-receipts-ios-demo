@@ -43,7 +43,7 @@ let URL = "XXX" // replace XXX with your assigned Endpoint URL
 - Run the project
 
 ### Other platforms <a name="other_platforms"></a>
-You can find these examples for Android [here](https://github.com/veryfi). We also support the following wrappers for hybrid frameworks:
+You can find these examples for Android [here](https://github.com/veryfi?q=android&type=all). We also support the following wrappers for hybrid frameworks:
 - [Cordova](https://hub.veryfi.com/lens/docs/cordova/)
 - [React Native](https://hub.veryfi.com/lens/docs/react-native/)
 - [Flutter](https://hub.veryfi.com/lens/docs/flutter/)
