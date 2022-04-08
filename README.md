@@ -1,6 +1,7 @@
 ![Veryfi Logo](https://cdn.veryfi.com/logos/veryfi-logo-wide-github.png)
-[![Swift 5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)
-[![iOS 15.2](https://img.shields.io/badge/iOS-15.2-blue.svg?style=flat)
+
+![Swift 5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)
+![iOS 15.2](https://img.shields.io/badge/iOS-15.2-blue.svg?style=flat)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 # Veryfi Lens
 Veryfi Lens is code (a framework) with UI for your mobile app to give it document capture superpowers in minutes.
