@@ -1,3 +1,7 @@
+![Veryfi Logo](https://cdn.veryfi.com/logos/veryfi-logo-wide-github.png)
+![Swift 5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)
+![iOS 15.2](https://img.shields.io/badge/iOS-15.2-blue.svg?style=flat)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 # Veryfi Lens
 Veryfi Lens is code (a framework) with UI for your mobile app to give it document capture superpowers in minutes.
 
@@ -10,10 +14,15 @@ Lens is built in native code and optimized for fast performance, clean user expe
 You can read further about Lens in Veryfi's dedicated page: https://www.veryfi.com/lens/
 
 ## Table of content
-1. [Veryfi Lens iOS Examples](#examples)
-2. [Configuration](#configuration)
-3. [Other platforms](#other_platforms)
-4. [Get in contact with our team](#contact)
+1. [Veryfi Lens iOS Example](#example)
+2. [Other Lens iOS Examples](#examples)
+3. [Configuration](#configuration)
+4. [Other platforms](#other_platforms)
+5. [Get in contact with our team](#contact)
+
+## Veryfi Lens iOS Example <a name="example"></a>
+
+![gif-receipts](https://user-images.githubusercontent.com/30237430/162517329-ac52098b-4220-488b-9fbb-debcf25c70e0.gif)
 
 ## Other Lens iOS Examples <a name="examples"></a>
 This is an example of how to use Veryfi Lens Receipts in your app, you can find the developer documentation [here](iOSLensReceipts.pdf).
