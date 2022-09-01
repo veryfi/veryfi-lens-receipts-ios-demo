@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0890A12A5AECA938061E966C /* Pods_LensReceiptsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C1B3556D358D2C9B9475AC /* Pods_LensReceiptsDemo.framework */; };
 		9D53207127ECC35C0067CE79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53207027ECC35C0067CE79 /* AppDelegate.swift */; };
 		9D53207327ECC35C0067CE79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53207227ECC35C0067CE79 /* SceneDelegate.swift */; };
 		9D53207527ECC35C0067CE79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53207427ECC35C0067CE79 /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09353766F4EB1CA6678C6D51 /* Pods-LensReceiptsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LensReceiptsDemo.release.xcconfig"; path = "Target Support Files/Pods-LensReceiptsDemo/Pods-LensReceiptsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		10C1B3556D358D2C9B9475AC /* Pods_LensReceiptsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LensReceiptsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D53206D27ECC35C0067CE79 /* LensReceiptsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LensReceiptsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D53207027ECC35C0067CE79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D53207227ECC35C0067CE79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		9D53207927ECC35E0067CE79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D53207C27ECC35E0067CE79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D53207E27ECC35E0067CE79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA2F877C10C461419E4D0CE4 /* Pods-LensReceiptsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LensReceiptsDemo.debug.xcconfig"; path = "Target Support Files/Pods-LensReceiptsDemo/Pods-LensReceiptsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,15 +35,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0890A12A5AECA938061E966C /* Pods_LensReceiptsDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5619EDE011ECB043E7A68D75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10C1B3556D358D2C9B9475AC /* Pods_LensReceiptsDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5CF090C6FAE120092EE67A6D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				AA2F877C10C461419E4D0CE4 /* Pods-LensReceiptsDemo.debug.xcconfig */,
+				09353766F4EB1CA6678C6D51 /* Pods-LensReceiptsDemo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -50,6 +65,7 @@
 				9D53206F27ECC35C0067CE79 /* LensReceiptsDemo */,
 				9D53206E27ECC35C0067CE79 /* Products */,
 				5CF090C6FAE120092EE67A6D /* Pods */,
+				5619EDE011ECB043E7A68D75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D53208127ECC35E0067CE79 /* Build configuration list for PBXNativeTarget "LensReceiptsDemo" */;
 			buildPhases = (
+				67FC73230245FC994356D553 /* [CP] Check Pods Manifest.lock */,
 				9D53206927ECC35C0067CE79 /* Sources */,
 				9D53206A27ECC35C0067CE79 /* Frameworks */,
 				9D53206B27ECC35C0067CE79 /* Resources */,
+				9D286CA028BFA8BA00252F3C /* Add environment variables */,
+				1688EC5B0D3136136E12BF9C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +159,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1688EC5B0D3136136E12BF9C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LensReceiptsDemo/Pods-LensReceiptsDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LensReceiptsDemo/Pods-LensReceiptsDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LensReceiptsDemo/Pods-LensReceiptsDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67FC73230245FC994356D553 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LensReceiptsDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D286CA028BFA8BA00252F3C /* Add environment variables */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}",
+			);
+			name = "Add environment variables";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nINFO_PLIST=\"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_CLIENT_ID string $VERYFI_CLIENT_ID\" \"$INFO_PLIST\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_USERNAME string $VERYFI_USERNAME\" \"$INFO_PLIST\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_API_KEY string $VERYFI_API_KEY\" \"$INFO_PLIST\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_URL string $VERYFI_URL\" \"$INFO_PLIST\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9D53206927ECC35C0067CE79 /* Sources */ = {
@@ -292,6 +372,7 @@
 		};
 		9D53208227ECC35E0067CE79 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA2F877C10C461419E4D0CE4 /* Pods-LensReceiptsDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -321,6 +402,7 @@
 		};
 		9D53208327ECC35E0067CE79 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09353766F4EB1CA6678C6D51 /* Pods-LensReceiptsDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

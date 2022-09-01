@@ -35,11 +35,20 @@ You can find five example projects, which are the five versions of Lens that we 
 - [Lens for Checks](https://github.com/veryfi/veryfi-lens-checks-ios-demo)
 
 ### Configuration <a name="configuration"></a>
-- Make sure your SSH key has been granted access to Veryfi's private Cocoapods repository [here](https://hub.veryfi.com/api/settings/keys/#package-managers-container). Also make sure your SSH key has been added to ssh-agent by running this command in the Terminal:
+- Make sure your iOS credentials are set to access Veryfi's private Cocoapods repository [here](https://hub.veryfi.com/api/settings/keys). 
+
+### Optional: Git credentials tool
+If you want to avoid typing the credentials you set in the previous step everytime you run pod install run `git credential approve` and type in a single entry the following information:
+
 ```
-# Replace /path/to/private_key with the actual path to your SSH private key
-ssh-add -K /path/to/private_key
+protocol=https
+host=repo.veryfi.com
+path=shared/lens/veryfi-lens-podspec.git
+username=YOUR_USERNAME
+password=YOUR_PASSWORD
+
 ```
+
 - Clone this repository
 - Run `pod install --repo-update` to install VeryfiLens and its dependencies
 - Open the workspace within the project in Xcode
