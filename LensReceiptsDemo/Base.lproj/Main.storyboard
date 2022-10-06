@@ -83,14 +83,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ZY-NR-rMF">
-                                <rect key="frame" x="20" y="92" width="374" height="120"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VeryfiLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3ZY-NR-rMF">
+                                <rect key="frame" x="40" y="92" width="334" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="C8F-Py-vTf"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="24" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Eak-72-MqE">
-                                <rect key="frame" x="0.0" y="232" width="414" height="630"/>
+                                <rect key="frame" x="0.0" y="212" width="414" height="650"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="switchCell" rowHeight="50" id="0xU-z8-FTg" customClass="SwitchTableViewCell" customModule="LensReceiptsDemo" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.5" width="374" height="50"/>
@@ -200,13 +200,13 @@
                         <viewLayoutGuide key="safeArea" id="CFl-aS-gnq"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Eak-72-MqE" firstAttribute="top" secondItem="3ZY-NR-rMF" secondAttribute="bottom" constant="20" id="0Wb-zA-K4P"/>
+                            <constraint firstItem="Eak-72-MqE" firstAttribute="top" secondItem="3ZY-NR-rMF" secondAttribute="bottom" id="0Wb-zA-K4P"/>
                             <constraint firstItem="Eak-72-MqE" firstAttribute="leading" secondItem="CFl-aS-gnq" secondAttribute="leading" id="AMo-BV-knx"/>
                             <constraint firstItem="3ZY-NR-rMF" firstAttribute="top" secondItem="CFl-aS-gnq" secondAttribute="top" id="HWZ-Js-J4S"/>
-                            <constraint firstItem="3ZY-NR-rMF" firstAttribute="leading" secondItem="CFl-aS-gnq" secondAttribute="leading" constant="20" id="Qvq-5F-Tv6"/>
+                            <constraint firstItem="3ZY-NR-rMF" firstAttribute="leading" secondItem="CFl-aS-gnq" secondAttribute="leading" constant="40" id="Qvq-5F-Tv6"/>
                             <constraint firstItem="CFl-aS-gnq" firstAttribute="trailing" secondItem="Eak-72-MqE" secondAttribute="trailing" id="YDZ-JQ-WwA"/>
                             <constraint firstItem="CFl-aS-gnq" firstAttribute="bottom" secondItem="Eak-72-MqE" secondAttribute="bottom" id="afz-ac-3xH"/>
-                            <constraint firstItem="CFl-aS-gnq" firstAttribute="trailing" secondItem="3ZY-NR-rMF" secondAttribute="trailing" constant="20" id="wWx-Jl-pl3"/>
+                            <constraint firstItem="CFl-aS-gnq" firstAttribute="trailing" secondItem="3ZY-NR-rMF" secondAttribute="trailing" constant="40" id="wWx-Jl-pl3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gtd-SM-Tad"/>
@@ -221,6 +221,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="VeryfiLogo" width="369" height="78"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
