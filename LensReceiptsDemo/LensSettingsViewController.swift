@@ -84,8 +84,8 @@ class LensSettingsViewController: UIViewController {
             textField.keyboardType = keyboardType
         }
         let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
-            let newValue = alertController.textFields?[0]
-            self.setSettingValueType(key: title, value: newValue?.text, type: type)
+            let newValue = alertController.textFields?[0].text?.replacingOccurrences(of: ",", with: ".")
+            self.setSettingValueType(key: title, value: newValue, type: type)
             self.settingsTableView.reloadRows(at: [indexPath], with: .automatic)
         }
         alertController.addAction(submitAction)
