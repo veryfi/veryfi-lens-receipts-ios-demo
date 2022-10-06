@@ -20,9 +20,9 @@ class LensSettingsViewController: UIViewController {
         "API Settings"
     ]
     let generalSection: [(Keys,Types)] = [(.autoLightDetectionIsOn, .switchCell), (.stitchIsOn, .switchCell), (.allowSubmitUndetectedDocsIsOn, .switchCell), (.autoSubmitDocumentOnCapture, .switchCell), (.backupDocsToGallery, .switchCell), (.returnStitchedPDF, .switchCell), (.closeCameraOnSubmit, .switchCell), (.locationServicesIsOn, .switchCell), (.originalImageMaxSizeInMB, .doubleValueCell)]
-    let imageProcessingSection: [(Keys,Types)]  = [(.autoRotateIsOn, .switchCell)]
-    let uiSection: [(Keys,Types)]  = [(.docDetectFillUIColor, .colorCell), (.submitButtonBackgroundColor, .stringColorCell)]
-    let apiSection: [(Keys,Types)]  = [(.autoDeleteAfterProcessing, .switchCell)]
+    let imageProcessingSection: [(Keys,Types)]  = [(.autoRotateIsOn, .switchCell),(.autoDocDetectionAndCropIsOn,.switchCell),(.blurDetectionIsOn, .switchCell),(.autoSkewCorrectionIsOn,.switchCell),(.autoCropGalleryIsOn, .switchCell)]
+    let uiSection: [(Keys,Types)]  = [(.docDetectFillUIColor, .colorCell), (.submitButtonBackgroundColor, .stringColorCell),(.submitButtonBorderColor,.stringColorCell),(.submitButtonFontColor,.stringColorCell),(.docDetectStrokeUIColor,.colorCell),(.submitButtonCornerRadius, .integerValueCell),(.manualCropIsOn,.switchCell),(.moreMenuIsOn,.switchCell),(.moreSettingsMenuIsOn,.switchCell),(.galleryIsOn,.switchCell),(.dictateIsOn,.switchCell),(.emailCCIsOn,.switchCell),(.emailCCDomain,.stringValueCell),(.rotateDocIsOn,.switchCell),(.shieldProtectionIsOn,.switchCell)]
+    let apiSection: [(Keys,Types)]  = [(.autoDeleteAfterProcessing, .switchCell),(.boostModeIsOn, .switchCell),(.boundingBoxesIsOn, .switchCell),(.detectBlurResponseIsOn,.switchCell),(.isProduction,.switchCell),(.confidenceDetailsIsOn,.switchCell),(.parseAddressIsOn,.switchCell),(.externalId,.stringValueCell)]
     lazy var sections: [[(Keys,Types)]] = [generalSection, imageProcessingSection, uiSection, apiSection]
     
     // MARK: Data
@@ -33,11 +33,21 @@ class LensSettingsViewController: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(cameraPressed))
         let settings = VeryfiLensSettings()
         jsonSettings = settings.json
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
         settingsTableView.reloadData()
+    }
+    
+    @objc func cameraPressed() {
+        performSegue(withIdentifier: "showLensConsole", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? LogsViewController {
+            viewController.jsonSettings = self.jsonSettings
+        }
     }
     
     //MARK: Cell values handlers

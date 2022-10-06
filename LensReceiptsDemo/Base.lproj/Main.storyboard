@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Logs View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="LensReceiptsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="LogsViewController" customModule="LensReceiptsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,9 +29,11 @@
                                     <action selector="launchLens:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TWR-Ul-rcu"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap on the bellow button to try out Lens!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fKZ-Ub-Rvx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fKZ-Ub-Rvx">
                                 <rect key="frame" x="20" y="112" width="374" height="660"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Tap on the bellow button to try out Lens!
+</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -73,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="-1900" y="98"/>
         </scene>
-        <!--Lens Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="lj5-ru-XZ5">
             <objects>
-                <viewController id="9SV-Ku-5g0" customClass="LensSettingsViewController" customModule="LensReceiptsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="9SV-Ku-5g0" customClass="LensSettingsViewController" customModule="LensReceiptsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="71e-iW-jvy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,7 +212,7 @@
                     <navigationItem key="navigationItem" id="Gtd-SM-Tad"/>
                     <connections>
                         <outlet property="settingsTableView" destination="Eak-72-MqE" id="Kmr-OM-tLJ"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="zoY-VE-r2V"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showLensConsole" id="zoY-VE-r2V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s24-Zq-9za" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

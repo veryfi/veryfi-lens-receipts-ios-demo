@@ -11,7 +11,7 @@
 		9D52660328EF693A005F30D7 /* VeryfiSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52660228EF693A005F30D7 /* VeryfiSwitch.swift */; };
 		9D53207127ECC35C0067CE79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53207027ECC35C0067CE79 /* AppDelegate.swift */; };
 		9D53207327ECC35C0067CE79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53207227ECC35C0067CE79 /* SceneDelegate.swift */; };
-		9D53207527ECC35C0067CE79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53207427ECC35C0067CE79 /* ViewController.swift */; };
+		9D53207527ECC35C0067CE79 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53207427ECC35C0067CE79 /* LogsViewController.swift */; };
 		9D53207827ECC35C0067CE79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D53207627ECC35C0067CE79 /* Main.storyboard */; };
 		9D53207A27ECC35E0067CE79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D53207927ECC35E0067CE79 /* Assets.xcassets */; };
 		9D53207D27ECC35E0067CE79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D53207B27ECC35E0067CE79 /* LaunchScreen.storyboard */; };
@@ -31,7 +31,7 @@
 		9D53206D27ECC35C0067CE79 /* LensReceiptsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LensReceiptsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D53207027ECC35C0067CE79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D53207227ECC35C0067CE79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9D53207427ECC35C0067CE79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9D53207427ECC35C0067CE79 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
 		9D53207727ECC35C0067CE79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D53207927ECC35E0067CE79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D53207C27ECC35E0067CE79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				9DEC2D8528EF265C00F81860 /* Cells */,
 				9D53207027ECC35C0067CE79 /* AppDelegate.swift */,
 				9D53207227ECC35C0067CE79 /* SceneDelegate.swift */,
-				9D53207427ECC35C0067CE79 /* ViewController.swift */,
+				9D53207427ECC35C0067CE79 /* LogsViewController.swift */,
 				9DEC2D8328EF264700F81860 /* LensSettingsViewController.swift */,
 				9D53207627ECC35C0067CE79 /* Main.storyboard */,
 				9D53207927ECC35E0067CE79 /* Assets.xcassets */,
@@ -274,7 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D53207527ECC35C0067CE79 /* ViewController.swift in Sources */,
+				9D53207527ECC35C0067CE79 /* LogsViewController.swift in Sources */,
 				9D52660328EF693A005F30D7 /* VeryfiSwitch.swift in Sources */,
 				9D53207127ECC35C0067CE79 /* AppDelegate.swift in Sources */,
 				9DEC2D8D28EF513100F81860 /* SwitchTableViewCell.swift in Sources */,
