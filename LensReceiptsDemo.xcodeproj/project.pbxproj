@@ -274,7 +274,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -f ./Script.sh ]\nthen\nsource ./Script.sh\nfi\nINFO_PLIST=\"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_CLIENT_ID string $VERYFI_CLIENT_ID\" \"$INFO_PLIST\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_USERNAME string $VERYFI_USERNAME\" \"$INFO_PLIST\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_API_KEY string $VERYFI_API_KEY\" \"$INFO_PLIST\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_URL string $VERYFI_URL\" \"$INFO_PLIST\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -f ./env-variables.sh ]\nthen\nsource ./env-variables.sh\nfi\nINFO_PLIST=\"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_CLIENT_ID string $VERYFI_CLIENT_ID\" \"$INFO_PLIST\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_USERNAME string $VERYFI_USERNAME\" \"$INFO_PLIST\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_API_KEY string $VERYFI_API_KEY\" \"$INFO_PLIST\"\n/usr/libexec/PlistBuddy -c \"Add :VERYFI_URL string $VERYFI_URL\" \"$INFO_PLIST\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
