@@ -1,4 +1,5 @@
-![Veryfi Logo](https://cdn.veryfi.com/logos/veryfi-logo-wide-github.png)
+<img src="https://user-images.githubusercontent.com/30441118/212185646-f96d2e4c-daf4-4286-8f1b-c92058224b87.png#gh-dark-mode-only" width="200">
+<img src="https://user-images.githubusercontent.com/30441118/212185644-ab61c399-0f0c-4d22-a361-0191632d63d2.png#gh-light-mode-only" width="200">
 
 ![Swift 5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)
 ![iOS 15.2](https://img.shields.io/badge/iOS-15.2-blue.svg?style=flat)
