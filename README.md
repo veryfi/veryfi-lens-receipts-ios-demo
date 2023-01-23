@@ -17,6 +17,8 @@ Veryfi Lens is a Framework: a self-contained, reusable chunks of code and resour
 
 Lens is built in native code and optimized for fast performance, clean user experience and low memory usage.
 
+![receipts](https://user-images.githubusercontent.com/30441118/195660110-e1e3954f-0f50-438c-bbba-91641a8202f4.gif)
+
 You can read further about Lens in Veryfi's dedicated page: https://www.veryfi.com/lens/
 
 ## Table of content
@@ -25,10 +27,6 @@ You can read further about Lens in Veryfi's dedicated page: https://www.veryfi.c
 3. [Configuration](#configuration)
 4. [Other platforms](#other_platforms)
 5. [Get in contact with our team](#contact)
-
-## Veryfi Lens iOS Example <a name="example"></a>
-
-![gif-receipts](https://user-images.githubusercontent.com/30237430/162517329-ac52098b-4220-488b-9fbb-debcf25c70e0.gif)
 
 ## Other Lens iOS Examples <a name="examples"></a>
 This is an example of how to use Veryfi Lens Receipts in your app, you can find the developer documentation [here](iOSLensReceipts.pdf).
