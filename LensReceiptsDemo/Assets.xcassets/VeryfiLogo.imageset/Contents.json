@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Veryfi-logo-brand.svg",
+      "filename" : "Veryfi-Logo-Navy-Transparent.png",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "Veryfi-logo-brand 1.svg",
+      "filename" : "Veryfi-Logo-Navy-Transparent 1.png",
       "idiom" : "universal"
     },
     {
@@ -21,7 +21,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Veryfi-logo-brand 2.svg",
+      "filename" : "Veryfi-Logo-White-Transparent.png",
       "idiom" : "universal"
     }
   ],
