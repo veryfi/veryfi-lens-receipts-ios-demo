@@ -17,29 +17,30 @@ Veryfi Lens is a Framework: a self-contained, reusable chunks of code and resour
 
 Lens is built in native code and optimized for fast performance, clean user experience and low memory usage.
 
-![receipts](https://user-images.githubusercontent.com/30441118/195660110-e1e3954f-0f50-438c-bbba-91641a8202f4.gif)
-
 You can read further about Lens in Veryfi's dedicated page: https://www.veryfi.com/lens/
 
 ## Table of content
-1. [Veryfi Lens iOS Example](#example)
-2. [Other Lens iOS Examples](#examples)
-3. [Configuration](#configuration)
+1. [Veryfi Lens iOS Examples](#examples)
+2. [How to add Veryfi Lens to your project](#cocoapods)
+3. [How to run this project](#configuration)
 4. [Other platforms](#other_platforms)
 5. [Get in contact with our team](#contact)
 
-## Other Lens iOS Examples <a name="examples"></a>
-This is an example of how to use Veryfi Lens Receipts in your app, you can find the developer documentation [here](iOSLensReceipts.pdf).
-You can find five example projects, which are the five versions of Lens that we currently offer:
-- [Lens for Long Receipts](https://github.com/veryfi/veryfi-lens-long-receipts-ios-demo)
-- [Lens for Receipts](https://github.com/veryfi/veryfi-lens-receipts-ios-demo)
-- [Lens for Credit Cards](https://github.com/veryfi/veryfi-lens-credit-cards-ios-demo)
-- [Lens for Business Cards](https://github.com/veryfi/veryfi-lens-business-cards-ios-demo)
-- [Lens for Checks](https://github.com/veryfi/veryfi-lens-checks-ios-demo)
+## Veryfi Lens Receipts & Invoices iOS Example <a name="example"></a>
+This is an example of how to use Veryfi Lens Receipts & Invoices in your app, you can find the developer documentation [here](https://app.veryfi.com/lens/docs/ios/).
 
-### Configuration <a name="configuration"></a>
-- Make sure your iOS credentials are set to access Veryfi's private Cocoapods repository [here](https://hub.veryfi.com/api/settings/keys). 
+![receipts](https://user-images.githubusercontent.com/30441118/195660110-e1e3954f-0f50-438c-bbba-91641a8202f4.gif)
 
+## How to add Veryfi Lens Receipts to your project <a name="cocoapods"></a>
+
+Install from our private [Cocoapods](https://hub.veryfi.com/api/settings/keys).
+
+Add in your project Podfile file the Veryfi Lens Receipts iOS SDK dependency:
+```ruby
+pod 'VeryfiLens-Receipts', '2.0.8.1'
+```
+
+## How to run this project <a name="configuration"></a>
 ### Optional: Git credentials tool
 If you want to avoid typing the credentials you set in the previous step everytime you run pod install run `git credential approve` and type in a single entry the following information:
 
@@ -64,8 +65,27 @@ let URL = "XXX" // replace XXX with your assigned Endpoint URL
 ```
 - Run the project
 
-### Other platforms <a name="other_platforms"></a>
-You can find these examples for Android [here](https://github.com/veryfi?q=android&type=all). We also support the following wrappers for hybrid frameworks:
+## Other Lens iOS Examples <a name="examples"></a>
+You can find some example projects, which are the different versions of Lens that we currently offer:
+- [Lens for Long Receipts](https://github.com/veryfi/veryfi-lens-long-receipts-ios-demo)
+- [Lens for Receipts](https://github.com/veryfi/veryfi-lens-receipts-ios-demo)
+- [Lens for Credit Cards](https://github.com/veryfi/veryfi-lens-credit-cards-ios-demo)
+- [Lens for Business Cards](https://github.com/veryfi/veryfi-lens-business-cards-ios-demo)
+- [Lens for Checks](https://github.com/veryfi/veryfi-lens-checks-ios-demo)
+- [Lens for W-2](https://github.com/veryfi/veryfi-lens-w2-ios-demo)
+- [Lens for W-9](https://github.com/veryfi/veryfi-lens-w9-ios-demo)
+
+## Other platforms <a name="other_platforms"></a>
+You can find these examples for Lens Android 
+- [Long Receipts](https://github.com/veryfi/veryfi-lens-long-receipts-android-demo)
+- [Receipts](https://github.com/veryfi/veryfi-lens-receipts-android-demo)
+- [Credit Cards](https://github.com/veryfi/veryfi-lens-credit-cards-android-demo)
+- [Business Cards](https://github.com/veryfi/veryfi-lens-business-cards-android-demo)
+- [Checks](https://github.com/veryfi/veryfi-lens-checks-android-demo)
+- [W-2](https://github.com/veryfi/veryfi-lens-w2-android-demo)
+- [W-9](https://github.com/veryfi/veryfi-lens-w9-android-demo)
+
+We also support the following wrappers for hybrid frameworks:
 - [Cordova](https://hub.veryfi.com/lens/docs/cordova/)
 - [React Native](https://hub.veryfi.com/lens/docs/react-native/)
 - [Flutter](https://hub.veryfi.com/lens/docs/flutter/)
@@ -73,6 +93,5 @@ You can find these examples for Android [here](https://github.com/veryfi?q=andro
 
 If you don't have access to our Hub, please contact our sales team, you can find the contact bellow.
 
-### Get in contact with our sales team <a name="contact"></a>
+## Get in contact with our sales team <a name="contact"></a>
 Contact sales@veryfi.com to learn more about Veryfi's awesome products.
-
