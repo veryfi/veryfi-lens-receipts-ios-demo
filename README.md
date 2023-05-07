@@ -32,7 +32,7 @@ You can watch our video:
 ## Veryfi Lens Receipts & Invoices iOS Example <a name="example"></a>
 This is an example of how to use Veryfi Lens Receipts & Invoices in your app, you can find the developer documentation [here](https://app.veryfi.com/lens/docs/ios/).
 
-![receipts](https://user-images.githubusercontent.com/30441118/195660110-e1e3954f-0f50-438c-bbba-91641a8202f4.gif)
+![receipt-demo](https://user-images.githubusercontent.com/8684090/236651344-306b1f55-a690-4151-87bd-c08d4d9297de.gif)
 
 ## How to add Veryfi Lens Receipts to your project <a name="cocoapods"></a>
 
