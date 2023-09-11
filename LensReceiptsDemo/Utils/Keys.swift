@@ -74,6 +74,5 @@ enum Types {
     case doubleValueCell
     case integerValueCell
     case stringValueCell
-    case colorCell
     case stringColorCell
 }

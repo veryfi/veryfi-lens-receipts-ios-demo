@@ -21,7 +21,7 @@ class LensSettingsViewController: UIViewController {
     ]
     let generalSection: [(Keys,Types)] = [(.autoLightDetectionIsOn, .switchCell), (.stitchIsOn, .switchCell), (.allowSubmitUndetectedDocsIsOn, .switchCell), (.autoSubmitDocumentOnCapture, .switchCell), (.backupDocsToGallery, .switchCell), (.returnStitchedPDF, .switchCell), (.closeCameraOnSubmit, .switchCell), (.locationServicesIsOn, .switchCell), (.originalImageMaxSizeInMB, .doubleValueCell)]
     let imageProcessingSection: [(Keys,Types)]  = [(.autoRotateIsOn, .switchCell),(.autoDocDetectionAndCropIsOn,.switchCell),(.blurDetectionIsOn, .switchCell),(.autoSkewCorrectionIsOn,.switchCell),(.autoCropGalleryIsOn, .switchCell), (.gpuIsOn, .switchCell)]
-    let uiSection: [(Keys,Types)]  = [(.docDetectFillUIColor, .colorCell), (.submitButtonBackgroundColor, .stringColorCell),(.submitButtonBorderColor,.stringColorCell),(.submitButtonFontColor,.stringColorCell),(.docDetectStrokeUIColor,.colorCell),(.submitButtonCornerRadius, .integerValueCell),(.manualCropIsOn,.switchCell),(.moreMenuIsOn,.switchCell),(.moreSettingsMenuIsOn,.switchCell),(.galleryIsOn,.switchCell),(.dictateIsOn,.switchCell),(.emailCCIsOn,.switchCell),(.emailCCDomain,.stringValueCell),(.rotateDocIsOn,.switchCell),(.shieldProtectionIsOn,.switchCell)]
+    let uiSection: [(Keys,Types)]  = [(.docDetectFillUIColor, .stringColorCell), (.submitButtonBackgroundColor, .stringColorCell),(.submitButtonBorderColor,.stringColorCell),(.submitButtonFontColor,.stringColorCell),(.docDetectStrokeUIColor,.stringColorCell),(.submitButtonCornerRadius, .integerValueCell),(.manualCropIsOn,.switchCell),(.moreMenuIsOn,.switchCell),(.moreSettingsMenuIsOn,.switchCell),(.galleryIsOn,.switchCell),(.dictateIsOn,.switchCell),(.emailCCIsOn,.switchCell),(.emailCCDomain,.stringValueCell),(.rotateDocIsOn,.switchCell),(.shieldProtectionIsOn,.switchCell)]
     let apiSection: [(Keys,Types)]  = [(.autoDeleteAfterProcessing, .switchCell),(.boostModeIsOn, .switchCell),(.boundingBoxesIsOn, .switchCell),(.detectBlurResponseIsOn,.switchCell),(.isProduction,.switchCell),(.confidenceDetailsIsOn,.switchCell),(.parseAddressIsOn,.switchCell),(.externalId,.stringValueCell)]
     lazy var sections: [[(Keys,Types)]] = [generalSection, imageProcessingSection, uiSection, apiSection]
     
@@ -51,9 +51,10 @@ class LensSettingsViewController: UIViewController {
     func handleColorCellTap(indexPath: IndexPath) {
         let title = sections[indexPath.section][indexPath.row].0.rawValue
         let type = sections[indexPath.section][indexPath.row].1
-        let rawColor = type == .colorCell ? jsonSettings[title] as? UIColor ?? UIColor.green.withAlphaComponent(0.3) : UIColor.color(from: jsonSettings[title] as? String ?? "")
-        guard let color = rawColor else { return }
-        
+        let color = UIColor.color(
+            from: jsonSettings[title] as? String ?? ""
+        ) ?? UIColor.green.withAlphaComponent(0.3)
+
         changingColor = sections[indexPath.section][indexPath.row]
         changingColorIndexPath = indexPath
         

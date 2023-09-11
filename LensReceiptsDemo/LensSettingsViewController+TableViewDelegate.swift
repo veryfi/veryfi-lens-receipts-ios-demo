@@ -12,7 +12,7 @@ extension LensSettingsViewController: UITableViewDelegate {
         let type = sections[indexPath.section][indexPath.row].1
         if type == .stringValueCell || type == .doubleValueCell || type == .integerValueCell {
             handleValueCellTap(indexPath: indexPath)
-        } else if type == .colorCell || type == .stringColorCell {
+        } else if type == .stringColorCell {
             handleColorCellTap(indexPath: indexPath)
         }
     }
