@@ -52,13 +52,6 @@ extension LensSettingsViewController: UITableViewDataSource {
             cell?.settingLabel.text = value
             cell?.selectionStyle = .none
             return cell ?? UITableViewCell()
-        case .colorCell:
-            let color = jsonSettings[title] as? UIColor
-            let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell") as? ColorTableViewCell
-            cell?.titleLabel.text = title.titlecased()
-            cell?.settingView.backgroundColor = color ?? UIColor.green.withAlphaComponent(0.3)
-            cell?.selectionStyle = .none
-            return cell ?? UITableViewCell()
         case .stringColorCell:
             let rawColor = jsonSettings[title] as? String ?? ""
             let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell") as? ColorTableViewCell
