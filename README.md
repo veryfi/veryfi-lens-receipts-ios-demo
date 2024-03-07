@@ -25,7 +25,7 @@ You can watch our video:
 ## Table of content
 1. [Veryfi Lens iOS Examples](#examples)
 2. [How to add Veryfi Lens to your project](#cocoapods)
-2. [Using SPM](#spm)
+3. [Using SPM](#spm)
 4. [How to run this project](#configuration)
 5. [Other platforms](#other_platforms)
 6. [Get in contact with our team](#contact)
