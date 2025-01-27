@@ -67,6 +67,7 @@ enum Keys: String {
     case customers
     case tags
     case categoriesList
+    case ignoreRemoteSettings
 }
 
 enum Types {
