@@ -8,5 +8,5 @@ target 'LensReceiptsDemo' do
   use_frameworks!
 
   # Pods for LensReceiptsDemo
-  pod 'VeryfiLens-Receipts', '3.0.0.16'
+  pod 'VeryfiLens-Receipts', '3.0.0.13'
 end
