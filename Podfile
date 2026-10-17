@@ -8,7 +8,7 @@ target 'LensReceiptsDemo' do
   use_frameworks!
 
   # Pods for LensReceiptsDemo
-  pod 'VeryfiLens-Receipts', '3.0.22.7'
+  pod 'VeryfiLens-Receipts', '3.0.24.4'
 end
 
 post_install do |installer|
