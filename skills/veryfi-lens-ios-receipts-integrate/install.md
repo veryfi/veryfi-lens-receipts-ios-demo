@@ -63,9 +63,32 @@ Do not add Contacts or Calendar usage strings unless product confirms those feat
 
 iOS 13+ for UIKit Lens. SwiftUI helpers are documented as iOS 15+.
 
+## Field detection
+
+On-device fields for receipts and long receipts (`vendor`, `date`, `time`, `total`, `tax`) need a different package. This binary links a field-detection stub. `documentFieldsToDetect` on this artifact does not run extraction.
+
+After capture, the Field Detection package runs on-device OCR and the field model, draws the values on the submit preview, and writes `detected_fields`. Receipt document-ready callbacks include those values. A missing requested field can prompt a retake. The validated account must include `detect_local_fields_on`. `local_fields_values_result_on` chooses extracted strings or field-present flags.
+
+| | |
+|--|--|
+| iOS SPM | `https://repo.veryfi.com/shared/lens/veryfi-lens-spm-field-detection.git` (`veryfi-lens-spm-field-detection`) |
+| iOS CocoaPods | Pod `VeryfiLens-FieldDetection`. CocoaPods publish is off for this flavor. Use SPM. |
+| Android Maven | `com.veryfi.lens:veryfi-lens-field-detection-sdk` |
+| Swift import | `VeryfiLens` |
+| XCFramework | `VeryfiLens.xcframework` |
+
+Remote Models is the other package that includes these models. It downloads `local_extraction` and `mobile_words_spm` after the first successful `configure`. [Remote Models](https://docs.veryfi.com/lens/mobile/remote-models/).
+
 ## App size
 
-When installed size matters, recommend the **Remote Models** flavor. A specific flavor embeds its models in the binary. Remote Models keeps that binary smaller and downloads most of the heavy model resources after install, only for the features the host turned on.
+When installed size matters, recommend the **Remote Models** flavor. It is the smallest Lens SDK and matches the full flavor's feature set. Heavy models stay out of the binary. The first successful `configure` downloads only the models for the document types and features in that call. Later launches reuse those files. Install it as the only Lens artifact in the app target.
+
+- iOS SPM: `https://repo.veryfi.com/shared/lens/veryfi-lens-spm-remote-models.git` (`veryfi-lens-spm-remote-models`)
+- iOS CocoaPods pod: `VeryfiLens-RemoteModels` (deprecated; no dedicated CocoaPods repo in the release pipeline). Prefer SPM.
+- Android Maven: `com.veryfi.lens:veryfi-lens-remote-models-sdk`
+
+Guide: [Remote Models](https://docs.veryfi.com/lens/mobile/remote-models/).
+
 
 Bank-check TIFF follows that split. `retrieveCheckTiffIsOn` is not supported on the Checks-specific flavor yet, because the TIFF model is large. Remote Models downloads it after install.
 

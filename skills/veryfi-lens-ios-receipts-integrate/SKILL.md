@@ -78,7 +78,7 @@ Read one level deep, and only inside this folder:
 - Credit card data is local only and is never sent to the backend. `.inApp` (`"mobile"`) is only for `credit_card`, `code`, and `barcode`.
 - Local fraud detection (`fraudDetectionIsOn`) and local field detection (`documentFieldsToDetect`) are paid features gated by the validated account and backend entitlement. Settings cannot unlock them. Field detection also needs the Field Detection or Remote Models flavor.
 - Bank-check TIFF (`retrieveCheckTiffIsOn`) requires Remote Models. It is not in the Checks-specific flavor yet, because the TIFF model is large.
-- When size matters, recommend Remote Models. Measure the final app with the SDK linked and with it removed. Do not quote the XCFramework file size. [SDK binary sizes](https://docs.veryfi.com/lens/mobile/settings/sdk_binary_sizes/).
+- When size matters, recommend Remote Models (`veryfi-lens-spm-remote-models`, pod `VeryfiLens-RemoteModels`, Android `com.veryfi.lens:veryfi-lens-remote-models-sdk`). Models download after the first successful `configure`. Measure the final app with the SDK linked and with it removed. Do not quote the XCFramework file size. [Remote Models](https://docs.veryfi.com/lens/mobile/remote-models/). [SDK binary sizes](https://docs.veryfi.com/lens/mobile/settings/sdk_binary_sizes/).
 - `uploadImages(paths:)` and `headlessUpload` on `VeryfiLens` are UI SDK helpers. They are not the Headless product (`VeryfiLensHeadless`).
 - Public UI settings are `VeryfiLensSettings()`. Do not use Demo subclasses in client code.
 - Headless products use `VeryfiLensCreditCardsSettings` or `VeryfiLensReceiptSettings` (singular), `VeryfiLensHeadlessCredentials`, and `VeryfiLensHeadless.shared()`.
@@ -87,12 +87,28 @@ Read one level deep, and only inside this folder:
 - Leave `glareDetectionIsOn` false unless the host explicitly wants the current glare gate. It is a suboptimal algorithmic detector.
 
 
+## Field detection
+
+On-device receipt fields need a different package from this one. The receipts and long-receipts binaries link a field-detection stub, so leave `documentFieldsToDetect` empty on this recipe.
+
+Field Detection reads the requested fields on the device during capture and shows them on the submit preview before cloud extraction returns. Supported ids are `vendor`, `date`, `time`, `total`, and `tax`. Lens stores the values in `detected_fields` and, for receipts, includes them in the document-ready callback. A missing requested field can prompt a retake. `allowCorrectingLocalExtractedFields` lets the user drag a bubble to correct a value.
+
+This is paid. The validated account must include `detect_local_fields_on`. `local_fields_values_result_on` chooses extracted strings or field-present flags. The setting list cannot unlock the feature by itself.
+
+| | |
+|--|--|
+| iOS SPM | `veryfi-lens-spm-field-detection` — `https://repo.veryfi.com/shared/lens/veryfi-lens-spm-field-detection.git` |
+| iOS CocoaPods | Pod `VeryfiLens-FieldDetection`. CocoaPods publish is off (`supportsCocoaPods` is false). Use SPM. |
+| Android Maven | `com.veryfi.lens:veryfi-lens-field-detection-sdk` |
+
+Install that package as the Lens artifact for the app target. Remote Models (`veryfi-lens-spm-remote-models`, `com.veryfi.lens:veryfi-lens-remote-models-sdk`) also includes the field models and downloads them after the first successful `configure`. Use Field Detection when the models should ship in the binary. Use Remote Models when install size matters. [Remote Models](https://docs.veryfi.com/lens/mobile/remote-models/).
+
 ## Suggestions
 
 - After the first scan works, add branding and `customLensStrings` last. They are not required for a successful scan.
 - If users import photos of paper, `autoCropGalleryIsOn` is best effort and also needs `autoDocDetectionAndCropIsOn`.
 - If several packages stay in flight, set `autoDeleteLocalResourcesAfterProcessing` false and delete in the host.
-- If installed size matters, ask Veryfi about Remote Models. Do not drop `invoice` or `other` from this binary to chase a smaller XCFramework file.
+- If installed size matters, use Remote Models (`veryfi-lens-spm-remote-models`, Android `com.veryfi.lens:veryfi-lens-remote-models-sdk`). Do not drop `invoice` or `other` from this binary to chase a smaller XCFramework file. [Remote Models](https://docs.veryfi.com/lens/mobile/remote-models/).
 - Local field detection is a paid add-on on the Field Detection or Remote Models flavor. This receipts recipe leaves that list empty.
 - A host that already owns the camera wants the Headless receipts SDK (`VeryfiLensHeadless`, `VeryfiLensReceiptSettings`), which is a different binary. `headlessUpload` on this UI SDK is not that product.
 
@@ -102,7 +118,7 @@ Read one level deep, and only inside this folder:
 - Do not set `dictateIsOn`, `anyDocumentType`, or `useLegacyModels`.
 - Do not leave `backupDocsToGallery` at its default true.
 - Do not enable `moreMenuIsOn` unless end users should override auto capture, torch, backups, Superman mode, and close-after-submit.
-- Do not promise bank-check TIFF, credit-card extraction, or on-device receipt fields from this binary.
+- Do not promise bank-check TIFF, credit-card extraction, or on-device receipt fields from this binary. On-device fields need the Field Detection package or Remote Models. See [Field detection](#field-detection).
 - Do not quote the XCFramework size as the app install delta.
 - Do not call `VeryfiLensUtils()` yourself. Use `VeryfiLens.shared().utils` after configure.
 

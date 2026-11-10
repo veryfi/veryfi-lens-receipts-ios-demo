@@ -61,7 +61,7 @@ Follow [no-ui-vs-headless.md](no-ui-vs-headless.md).
 
 ## 4. Flavor and recipe
 
-Pick the narrowest flavor whose models match the documents. When install size matters, recommend **Remote Models**. Apply **one** recipe id from [flavors.md](flavors.md). The sibling skill writes the property assignments.
+Pick the narrowest flavor whose models match the documents. When install size matters, recommend **Remote Models** ([packages](flavors.md#remote-models), [public guide](https://docs.veryfi.com/lens/mobile/remote-models/)). Apply **one** recipe id from [flavors.md](flavors.md). The sibling skill writes the property assignments.
 
 Public settings stay on `VeryfiLensSettings`. The iOS baseline forbids `VeryfiLensReceiptsSettings`, `VeryfiLensChecksSettings`, and other `VeryfiLens*Settings` subclasses in client code. Do not copy those subclasses out of the public quick start.
 

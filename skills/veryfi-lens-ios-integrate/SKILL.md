@@ -79,7 +79,13 @@ Ask only what is missing:
 
 The XCFramework **must** ship models for `documentTypes`. Settings cannot fix a receipts-only binary scanning checks.
 
-When SDK size is a concern, recommend the **Remote Models** flavor. A specific flavor (Checks, Receipts, and the rest) embeds its models in the binary. Remote Models keeps that binary smaller and downloads most of the heavy model resources after install, only for the features the host turned on. Bank-check TIFF is one of those: it is not in the Checks-specific flavor yet because the TIFF model is large, and it is supported on Remote Models. Size tables and how published artifacts relate to the installed app: [SDK binary sizes](https://docs.veryfi.com/lens/mobile/settings/sdk_binary_sizes/).
+When SDK size is a concern, recommend the **Remote Models** flavor. It is the smallest Lens SDK and matches the full flavor's feature set, with heavy models left out of the binary. The first successful `configure` downloads only the models for the document types and features in that call. Later launches reuse the files on device. Bank-check TIFF (`retrieveCheckTiffIsOn`) is one of those downloads. It is absent from the Checks-specific flavor because the TIFF model is large. Install Remote Models as the only Lens artifact in the app target.
+
+- iOS SPM: `https://repo.veryfi.com/shared/lens/veryfi-lens-spm-remote-models.git` (`veryfi-lens-spm-remote-models`)
+- iOS CocoaPods pod: `VeryfiLens-RemoteModels` (deprecated). The release pipeline publishes no dedicated CocoaPods repo for this flavor. Prefer SPM.
+- Android Maven: `com.veryfi.lens:veryfi-lens-remote-models-sdk`
+
+Android accepts the full flavor's document types, and credit card capture on Android stays on the Credit Cards flavor. On iOS, Remote Models also supports `credit_card`. OCR `code` stays on the OCR package. [Remote Models](https://docs.veryfi.com/lens/mobile/remote-models/). Size tables: [SDK binary sizes](https://docs.veryfi.com/lens/mobile/settings/sdk_binary_sizes/).
 
 Measure size on the final build product, once with the Veryfi Lens SDK linked and once without it. The distributed XCFramework size and the Android AAR size are fat artifacts that include every architecture and platform slice. Neither number is the size added to the installed app.
 
@@ -87,7 +93,7 @@ Measure size on the final build product, once with the Veryfi Lens SDK linked an
 |---------------|-------------------------|
 | Full / Receipts | `receipt`, `invoice`, `other` (+ `long_receipt` if that flavor) |
 | Checks | `check`. Capture only. Check TIFF is not in this specific flavor yet (model size). |
-| Remote Models | Recommended when size matters. Downloads heavy models after install. Supports bank-check TIFF (`retrieveCheckTiffIsOn`). |
+| Remote Models | Smallest SDK. Full feature set. Models download after the first successful `configure`. SPM `veryfi-lens-spm-remote-models`. Android `com.veryfi.lens:veryfi-lens-remote-models-sdk`. [Docs](https://docs.veryfi.com/lens/mobile/remote-models/). |
 | CreditCards | `credit_card`. Local extraction only. Card data is never sent to the backend. |
 | BusinessCards | `business_card` |
 | OCR / Code | `code` |
@@ -101,6 +107,8 @@ Measure size on the final build product, once with the Veryfi Lens SDK linked an
 | Headless Receipts / Credit Cards | no Lens UI; own camera |
 
 If flavor is unknown, say so and pick the narrowest `documentTypes` that match the documents. If size is a concern, say so and recommend Remote Models.
+
+Field Detection is the on-device receipt-field package for receipts and long receipts. It is a different binary from `veryfi-lens-spm-receipts` and `veryfi-lens-spm-long-receipts`. SPM repo `veryfi-lens-spm-field-detection` (`https://repo.veryfi.com/shared/lens/veryfi-lens-spm-field-detection.git`). Pod `VeryfiLens-FieldDetection` is unpublished (`supportsCocoaPods` is false). Use SPM. Android Maven `com.veryfi.lens:veryfi-lens-field-detection-sdk`. During capture it extracts `vendor`, `date`, `time`, `total`, and `tax` from `documentFieldsToDetect` when the account has `detect_local_fields_on`.
 
 Then open [flavor-matrix.md](flavor-matrix.md) and the matching template. A flavor with **no dedicated SPM** must not be installed from `veryfi-lens-spm`. That package is the Full UI binary. Lite is `VeryfiLensLite`, not Core. Headless products use `VeryfiLensHeadless` plus their own settings types, not `VeryfiLensSettings`.
 
