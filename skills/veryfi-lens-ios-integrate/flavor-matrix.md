@@ -6,15 +6,16 @@ Public install pages often paste the Full package URL even when the pipeline pub
 
 ## How to install
 
-**Swift Package Manager.** Xcode → File → Add Package Dependencies. Credentials are the Lens CocoaPods/SPM key from the Veryfi hub. The only public package URL confirmed on the docs site is:
+**Swift Package Manager.** Xcode → File → Add Package Dependencies. Credentials are the Lens CocoaPods/SPM key from the Veryfi hub. Public package URLs confirmed on the docs site:
 
-`https://repo.veryfi.com/shared/lens/veryfi-lens-spm.git`
+- Full UI: `https://repo.veryfi.com/shared/lens/veryfi-lens-spm.git`
+- Remote Models: `https://repo.veryfi.com/shared/lens/veryfi-lens-spm-remote-models.git` ([Remote Models](https://docs.veryfi.com/lens/mobile/remote-models/))
 
-That URL is the **Full** UI binary. Dedicated repos in the table below are published by the iOS release pipeline to `shared/lens/<repo>.git` (GitLab remote `git@gitlab.services.veryfi.com:shared/lens/<repo>.git`). The same `https://repo.veryfi.com/shared/lens/<repo>.git` host for those other repo names is **Unconfirmed**, because the public installation pages checked below still show `veryfi-lens-spm.git`.
+The Full URL is the **Full** UI binary. Dedicated repos in the table below are published by the iOS release pipeline to `shared/lens/<repo>.git` (GitLab remote `git@gitlab.services.veryfi.com:shared/lens/<repo>.git`). The same `https://repo.veryfi.com/shared/lens/<repo>.git` host for repo names other than Full and Remote Models is **Unconfirmed**, because the public installation pages checked below still show `veryfi-lens-spm.git`.
 
 Commented repo names in `SPM.swift` (`veryfi-lens-spm-lite`, `veryfi-lens-spm-headless-credit-cards`) are not published. `supportsSPM` is false for those cases.
 
-**CocoaPods.** Public docs call CocoaPods deprecated and prefer SPM. It remains the pipeline path for every flavor in this matrix (`supportsCocoaPods` is false only for Prescription Labels, Field Detection, and Remote Models, which are outside this matrix).
+**CocoaPods.** Public docs call CocoaPods deprecated and prefer SPM. It remains the pipeline path for the flavors in this matrix that have a CocoaPods repo. `supportsCocoaPods` is false for Prescription Labels, Field Detection, and Remote Models. Prescription Labels stays outside this matrix. Field Detection is listed below for receipts and long receipts. Remote Models is listed below. Its public pod name is `VeryfiLens-RemoteModels`. New apps use SPM `veryfi-lens-spm-remote-models`.
 
 ```ruby
 source 'https://repo.veryfi.com/shared/lens/veryfi-lens-podspec.git'
@@ -47,6 +48,12 @@ Replace `POD_NAME` with the pod column. Version pin syntax on the public pages i
 | [OCR strips](templates/ocr-code-strips.md) / [OCR caps](templates/ocr-code-caps.md) | `VeryfiLens-OCR` | **No** | none published | `VeryfiLens.xcframework` | `VeryfiLens` | `veryfi-lens-cocoapods-ocr` |
 | [W-2](templates/w2.md) | `VeryfiLens-W2` | **No** | none published | `VeryfiLens.xcframework` | `VeryfiLens` | `veryfi-lens-cocoapods-w2` |
 | [W-9](templates/w9.md) | `VeryfiLens-W9` | **No** | none published | `VeryfiLens.xcframework` | `VeryfiLens` | `veryfi-lens-cocoapods-w9` |
+| Remote Models | `VeryfiLens-RemoteModels` | Yes | `veryfi-lens-spm-remote-models` | `VeryfiLens.xcframework` | `VeryfiLens` | none published |
+| Field Detection | `VeryfiLens-FieldDetection` | Yes | `veryfi-lens-spm-field-detection` | `VeryfiLens.xcframework` | `VeryfiLens` | none published |
+
+Remote Models is the smallest SDK and matches the full flavor's feature set. Models download after the first successful `configure`. Public SPM URL: `https://repo.veryfi.com/shared/lens/veryfi-lens-spm-remote-models.git`. Android Maven: `com.veryfi.lens:veryfi-lens-remote-models-sdk`. Guide: [Remote Models](https://docs.veryfi.com/lens/mobile/remote-models/).
+
+Field Detection is the on-device receipt-field package for receipts and long receipts. SPM `https://repo.veryfi.com/shared/lens/veryfi-lens-spm-field-detection.git` (`veryfi-lens-spm-field-detection`). Android Maven `com.veryfi.lens:veryfi-lens-field-detection-sdk`. CocoaPods pod `VeryfiLens-FieldDetection` is unpublished (`supportsCocoaPods` is false). Use SPM.
 
 OCR strips and OCR caps are one binary. `ocrType` selects the mode.
 
