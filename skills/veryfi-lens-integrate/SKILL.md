@@ -6,6 +6,7 @@ description: >-
   headlessUpload from Headless products, and runs a quick or guided intake
   (flavor, recipe, conflicts, troubleshooting) before handoff. Use when adding
   Veryfi Lens, choosing a flavor or recipe, or when the platform is not yet known.
+  Covers Lens analytics events and notification subscription (events.md).
 ---
 
 # Veryfi Lens integration router
@@ -109,3 +110,7 @@ Lens route:
 - Leave `ignoreRemoteSettings` false unless the host wants dashboard `lens_settings` to override the recipe
 - Set in-app extraction except for `credit_card`, `code`, or `barcode`
 - Send credit card data to the backend
+
+## Analytics and metrics
+
+Lens already records interaction events. When the host wants those metrics, subscribe as in [events.md](events.md). Use the event names listed there. Do not invent names. On Android, register `com.veryfi.lens.VeryfiLensSecureAnalyticsEvent`, not the deprecated `com.veryfi.lens.VeryfiLensAnalyticsEvent`. A plugin host calls the plugin observe API instead of registering that broadcast itself.

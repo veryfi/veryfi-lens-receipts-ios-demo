@@ -7,6 +7,7 @@ description: >-
   Lite App Clip, and headless receipts or credit cards.
   Use when adding Veryfi Lens to an iOS app, choosing a flavor template, wiring listeners, or
   reducing Lens support tickets about capture, upload, or extraction.
+  Covers Lens analytics events and notification subscription (events.md).
 ---
 
 # Veryfi Lens iOS integration
@@ -210,3 +211,7 @@ When generating host code, produce:
 3. One presentation path
 4. The recipe’s `VeryfiLensSettings` mutations with a one-line comment per non-obvious flag
 5. A short conflict note if any residual risk remains
+
+## Analytics and metrics
+
+Lens already records interaction events. When the host wants those metrics, subscribe as in [events.md](events.md). Use the event names listed there. Do not invent names. On Android, register `com.veryfi.lens.VeryfiLensSecureAnalyticsEvent`, not the deprecated `com.veryfi.lens.VeryfiLensAnalyticsEvent`. A plugin host calls the plugin observe API instead of registering that broadcast itself.
